@@ -193,7 +193,6 @@ def cursor_pos_callback(window, x_pos, y_pos):
 # run-time UI loop ---------------------------------------------------
 glfw.set_mouse_button_callback(window, mouse_button_callback)
 glfw.set_cursor_pos_callback(window, cursor_pos_callback)
-# positions_on_curve = []
 while (
     glfw.get_key(window, glfw.KEY_ESCAPE) != glfw.PRESS and
     not glfw.window_should_close(window)
@@ -218,43 +217,3 @@ for shader_id in shader_ids:
     gl.glDeleteShader(shader_id)
 gl.glUseProgram(0)
 gl.glDeleteProgram(program_id)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-def interpolate_bezier_position_at2(t, p0, p1, p2, p3):
-    b0 = pow(1-t, 3)
-    b1 = 3*t*pow(1-t, 2)
-    b2 = 3*pow(t,2)*(1-t)
-    b3 = pow(t, 3)
-    result = p0*b0 + p1*b1 + p2*b2 + p3*b3
-    return result
-'''
